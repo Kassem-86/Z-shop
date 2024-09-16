@@ -12,15 +12,25 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::all();
+        $items = Item::paginate(7);
+
         return view('admin.dashboard', compact('items'));
     }
 
 
-    public function shop()
+    public function shop(Request $request)
     {
-        $items = Item::all();  // Fetch all items for users
+        $items = Item::all();
 
-        return view('items.shop', compact('items'));  // Return shop page view
+        // Get the search query from the request
+        $search = $request->input('search');
+
+        // Fetch items based on the search query, paginate with 12 items per page
+        $items = Item::when($search, function ($query, $search) {
+            return $query->where('name', 'LIKE', "%{$search}%");
+        })->paginate(8);
+
+        return view('items.shop', compact('items'));
     }
     // Show form to create a new item
     public function create()

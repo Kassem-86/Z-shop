@@ -24,12 +24,13 @@ Route::get('/wishlist', function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('admin/dashboard', [ItemController::class, 'index'])->name('admin.dashboard');
 });
 Route::middleware('auth')->group(function () {
     Route::get('admin/add', [ItemController::class, 'create'])->name('admin.create');
 });
 
+route::get('/shop', [ItemController::class, 'shop'])->name('shop');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

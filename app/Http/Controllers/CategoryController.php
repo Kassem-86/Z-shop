@@ -25,6 +25,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         $items = Item::all();
+
         return view('items.shop', compact('items', 'categories'));
     }
     
@@ -33,6 +34,8 @@ class CategoryController extends Controller
 {
     $category = Category::findOrFail($id);
     $items = Item::where('category_id', $id)->get();
+    $items = Item::where('category_id', $id)->paginate(12);
+
 
     return view('items.shop', compact('items', 'category'));
 }
