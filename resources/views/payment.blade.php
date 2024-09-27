@@ -16,8 +16,6 @@
 
                     @csrf
 
-                    <!-- Hidden Item ID -->
-                    <input type="hidden" name="item_id" value="{{ $item->id }}"> <!-- Ensure $item is passed to the view -->
 
                     <!-- Card Element -->
                     <div class="mb-4">
@@ -26,7 +24,7 @@
                         <div id="card-errors" role="alert" class="text-red-500 mt-2"></div>
                     </div>
 
-                    <!-- Payment Method Options -->
+                    <!-- Cash Payment Option -->
                     <div class="mb-4">
                         <label class="block text-gray-700">Payment Method</label>
                         <div class="mt-2">
