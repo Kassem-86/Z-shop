@@ -43,6 +43,7 @@ class CartController extends Controller
         $totalPrice = $cartItems->sum(function($cartItem) {
             return $cartItem->item->price * $cartItem->quantity;
         });
+        
 
         return view('cart', [
             'cartItems' => $cartItems,

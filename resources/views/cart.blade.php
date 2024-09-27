@@ -25,8 +25,8 @@
             </div>
 
             <div class="mt-8">
-                <h2 class="text-2xl font-bold mb-4">Total Price: ${{ number_format($totalPrice, 2) }}</h2>
-                <button class="bg-green-500 text-white py-3 px-6 rounded-md hover:bg-green-600">Proceed to Checkout</button>
+                {{-- <h2 class="text-2xl font-bold mb-4">Total Price: ${{ number_format($totalPrice, 2) }}</h2> --}}
+             <a href="/payment"> <button class="bg-green-500 text-white py-3 px-6 rounded-md hover:bg-green-600">Proceed to Checkout</button>  </a>
             </div>
         @endif
     </div>

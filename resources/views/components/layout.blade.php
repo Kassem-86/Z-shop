@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html class="h-full bg-gray-100">
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,8 +14,15 @@
             dropdown.classList.toggle('hidden');
         }
     </script>
+    <style>
+    body {
+        background-image: url('https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); 
+        background-size: cover;
+        background-position: center;
+    }
+</style>
 </head>
-<body class="h-full">
+<body class="h-full" >
     <div class="min-h-full flex flex-col">
         <!-- Horizontal Navbar -->
         <nav class="{{ $navClass ?? 'bg-blue-500' }} w-full">
